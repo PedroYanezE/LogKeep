@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularOrigins",
@@ -21,6 +20,7 @@ builder.Services.AddCors(options =>
 });
 
 var mongoDbSettings = builder.Configuration.GetSection("MongoDBSettings").Get<MongoDbSettings>();
+
 builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
 
 builder.Services.AddDbContext<LogKeepDbContext>(options =>
