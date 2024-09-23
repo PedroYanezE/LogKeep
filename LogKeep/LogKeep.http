@@ -1,0 +1,6 @@
+@LogKeep_HostAddress = http://localhost:5160
+
+GET {{LogKeep_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
